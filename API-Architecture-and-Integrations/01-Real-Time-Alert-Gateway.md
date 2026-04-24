@@ -108,3 +108,25 @@ sequenceDiagram
         Note over GW: Initiate Exponential Backoff Retry Protocol
     end
 ```
+
+
+## 5. Infrastructure, Governance & Operations
+
+To transition this design into a production-ready enterprise solution, the following operational and architectural guardrails must be established:
+
+### A. Infrastructure, Network & Protocols
+* **Network Topology:** The API Gateway will reside in a public-facing DMZ (Demilitarized Zone) subnet, while the Transformation Layer and Message Broker remain in a strictly private Virtual Private Cloud (VPC) subnet. 
+* **Protocols:** All B2B communication is strictly enforced over **HTTPS/TLS 1.3**. Legacy HTTP polling will be permanently blocked at the load balancer level.
+* **Egress Gateway:** Webhooks firing outward to external partner CRMs will route through a dedicated NAT Gateway with static IP addresses so partners can whitelist our traffic.
+
+### B. Security & API Governance
+* **Authentication:** External partners will use OAuth 2.0 (Client Credentials flow) to retrieve temporary, scoped access tokens. 
+* **Rate Limiting & WAF:** To prevent DDoS attacks or accidental partner loops, strict rate limits (e.g., 100 requests/minute per partner) are enforced at the API Gateway. A Web Application Firewall (WAF) will inspect payloads for SQL injection or cross-site scripting.
+
+### C. Financials & Development Effort (FinOps)
+* **Cloud Cost Optimization:** Shifting from constant DB polling to Event-Driven Smart Batching reduces database compute costs by an estimated 75%. The API Gateway cost is strictly tied to consumption (per million requests), ensuring high ROI.
+* **Internal Effort:** Estimated at 3-4 development sprints to stand up the Webhook Dispatcher microservice, configure the API Gateway policies, and implement the Exponential Backoff Retry mechanism.
+
+### D. External Onboarding & Documentation
+* **Developer Portal:** We cannot assume partner IT teams will magically understand the integration. A self-service Developer Portal will be deployed hosting **OpenAPI (Swagger)** documentation.
+* **Sandbox Environment:** Partners will be provided a sandbox testing environment where they can trigger dummy freight alerts to verify their Webhook listeners are parsing the JSON correctly before cutting over to production.
