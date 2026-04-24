@@ -130,3 +130,26 @@ To transition this design into a production-ready enterprise solution, the follo
 ### D. External Onboarding & Documentation
 * **Developer Portal:** We cannot assume partner IT teams will magically understand the integration. A self-service Developer Portal will be deployed hosting **OpenAPI (Swagger)** documentation.
 * **Sandbox Environment:** Partners will be provided a sandbox testing environment where they can trigger dummy freight alerts to verify their Webhook listeners are parsing the JSON correctly before cutting over to production.
+
+## 6. Execution Roadmap & Business Justification
+
+To secure funding and transition from architecture to execution, the following delivery roadmap and business case govern the implementation:
+
+### A. Executive Business Case (The CTO Pitch)
+**The ROI Equation:** The current pull-based legacy system risks severe SLA financial penalties and partner churn due to data desync. By implementing a Serverless API Gateway, we shift infrastructure costs from expensive, heavy database queries to a lightweight "pay-per-execution" cloud model. The operational savings and protected SLA revenue fundamentally offset the internal development cost within the first two quarters of deployment.
+
+### B. Minimum Viable Product (MVP) Scope
+To mitigate deployment risk, the MVP is strictly scoped:
+* **Target:** Deploy the Webhook Dispatcher for **one** Tier-1 pilot partner.
+* **Scope:** Push daily freight status updates only (excluding complex nested manifest documents). 
+* **Exclusion:** Automated REST API fallbacks and self-service Developer Portals are deferred to Post-MVP releases.
+
+### C. Agile Delivery Plan (Sprint Breakdown)
+The MVP will be delivered across three two-week sprints:
+* **Sprint 1 (Foundation):** Provision the cloud API Gateway, establish the private VPC link to the legacy database, and configure OAuth 2.0 security policies.
+* **Sprint 2 (Core Logic):** Develop the Serverless Transformation Layer (mapping the legacy XML to the target JSON schema) and build the "ETL Complete" event listener.
+* **Sprint 3 (Integration & Pilot):** End-to-end testing with the pilot partner's CRM. Monitor delivery success rates and refine the exponential backoff retry logic.
+
+### D. Cost & Pricing Strategy (FinOps)
+* **Development Cost (CAPEX):** 1 Scrum Team (Lead Dev, Cloud Engineer, QA) allocated for 3 Sprints.
+* **Operational Cost (OPEX):** The Serverless infrastructure (e.g., AWS Lambda / API Gateway) is billed entirely on consumption. Because this is a "Smart Batch" system firing once daily per partner, the compute and egress costs are projected to be under $50/month at scale, providing a massive margin improvement over traditional dedicated hosting.
