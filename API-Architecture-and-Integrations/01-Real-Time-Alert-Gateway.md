@@ -73,3 +73,38 @@ During the design phase, we encountered a classic "Layer Collision": The Applica
 * **The Trade-Offs:**
   * *Advantages:* Highly cost-effective, zero disruption to the data team's existing pipelines, eliminates wasted compute from empty REST API calls, and guarantees partners never miss an update.
   * *Weaknesses:* The business stakeholders must accept that while the *delivery* is instantaneous and automated, the underlying data is still 24 hours old.
+
+
+## 4. System Design & Sequence Flow
+
+The sequence diagram below illustrates the "Smart Batch" webhook trigger, ensuring data is only pushed once the legacy system has fully committed the daily updates, eliminating empty API polling.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant ETL as Legacy ETL Process
+    participant DB as Core Freight DB
+    participant GW as API Gateway (Dispatcher)
+    participant B2B as Partner CRM (External)
+
+    Note over ETL, DB: 1. Nightly Batch Processing
+    ETL->>DB: Load Daily Freight Status Updates
+    DB-->>ETL: Commit Successful
+    
+    Note over DB, GW: 2. The Smart Trigger
+    ETL->>GW: Trigger: "Batch Process Complete"
+    
+    Note over GW, DB: 3. Profile & Payload Construction
+    GW->>DB: Query: SELECT * WHERE IsMonitored = 1
+    DB-->>GW: Return Active Alert Payloads
+    
+    Note over GW, B2B: 4. Asynchronous Push
+    GW->>B2B: HTTP POST (JSON Webhook Payload)
+    
+    alt Successful Delivery
+        B2B-->>GW: 200 OK
+    else External Server Down
+        B2B--xGW: 503 Service Unavailable
+        Note over GW: Initiate Exponential Backoff Retry Protocol
+    end
+```
