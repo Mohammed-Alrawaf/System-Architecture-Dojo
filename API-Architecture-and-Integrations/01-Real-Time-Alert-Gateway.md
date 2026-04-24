@@ -55,3 +55,18 @@ JSON
   }
 }
 Note: The target JSON payload includes a HATEOAS link (full_report). This allows the partner system to immediately trigger a secondary API call if the delayed freight requires a full manifest download.
+
+
+## 3. Architecture Decision & Trade-Off Analysis
+
+During the design phase, we encountered a classic "Layer Collision": The Application Layer requires modern real-time push capabilities, but the legacy Data Layer is constrained to a heavy, nightly ETL batch process. We evaluated two paths:
+
+### Option A: True Real-Time via Change Data Capture (CDC) - [Deferred to Phase 2]
+* **The Architecture:** Attaching a CDC tool (e.g., Debezium) directly to the legacy database transaction logs to stream row-level updates to a message broker in milliseconds without querying the database.
+* **The Decision:** Deferred. While technically superior, the infrastructure cost (Kafka/Event Hubs) and the massive paradigm shift required for the Data Engineering team outstrip the immediate ROI of freight tracking alerts. Furthermore, deploying log-miners on a fragile legacy backend carries high unquantified availability risks.
+
+### Option B: Event-Driven "Smart Batching" - [Selected for Phase 1]
+* **The Architecture:** We accept the Data Layer's constraint and retain the legacy nightly ETL job. However, instead of external partners blindly polling the API and guessing when the data is ready, the system listens for a single "ETL Batch Complete" flag. The API Gateway then instantly fires a webhook, pushing the batched JSON alerts to the partners.
+* **The Trade-Offs:**
+  * *Advantages:* Highly cost-effective, zero disruption to the data team's existing pipelines, eliminates wasted compute from empty REST API calls, and guarantees partners never miss an update.
+  * *Weaknesses:* The business stakeholders must accept that while the *delivery* is instantaneous and automated, the underlying data is still 24 hours old.
