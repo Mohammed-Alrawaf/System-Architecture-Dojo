@@ -135,7 +135,7 @@ To transition this design into a production-ready enterprise solution, the follo
 
 To secure funding and transition from architecture to execution, the following delivery roadmap and business case govern the implementation:
 
-### A. Executive Business Case (The CTO Pitch)
+### A. Executive Business Case (The Pitch)
 **The ROI Equation:** The current pull-based legacy system risks severe SLA financial penalties and partner churn due to data desync. By implementing a Serverless API Gateway, we shift infrastructure costs from expensive, heavy database queries to a lightweight "pay-per-execution" cloud model. The operational savings and protected SLA revenue fundamentally offset the internal development cost within the first two quarters of deployment.
 
 ### B. Minimum Viable Product (MVP) Scope
