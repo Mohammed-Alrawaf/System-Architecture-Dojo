@@ -23,7 +23,6 @@ I'm currently a System Analyst in the FinTech sector (Credit Bureau). On a day-t
 
 ## 📂 How This Repository is Organized
 
-Instead of listing every single file (which gets outdated fast), here is the general layout of the workspace so you can browse directly:
 
 ### 1. Architecture Scenarios (Root Folder)
 Each scenario is numbered (e.g., `01`, `02`) and broken down into three files to give a complete view of the problem:
