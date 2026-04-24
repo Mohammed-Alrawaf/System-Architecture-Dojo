@@ -38,7 +38,25 @@ To solve the desync, we are migrating from a synchronous "Pull" model to an asyn
 </soapenv:Envelope>
 ```
 
-*[JSON Target Payload reserved for separate injection]*
+**The Target (Modern JSON Webhook pushed to the Partner CRM):**
+
+```JSON
+{
+  "event_type": "freight.status_updated",
+  "tracking_id": "TRK-998822",
+  "partner_id": "RTL-005",
+  "data": {
+    "status": "Delayed - Customs Hold",
+    "updated_at": "2026-04-24T08:30:00Z",
+    "action_required": true
+  },
+  "links": {
+    "full_report": "https://api.logistics.com/v1/freight/TRK-998822"
+  }
+}
+```
+*Note: The target JSON payload includes a HATEOAS link (full_report). This allows the partner system to immediately trigger a secondary API call if the delayed freight requires a full manifest download.*
+
 
 ## 3. Architecture Trade-Offs & Edge Case Resiliency
 
