@@ -18,7 +18,7 @@
 To solve the desync and constraints, we are moving from a synchronous "Pull" model to an asynchronous "Push" model, backed by a multi-modal gateway.
 
 ### Core Components:
-1. **Message Broker (Apache Kafka / Azure Service Bus):** Sits behind the legacy SOAP XML database. Instead of batching data, it detects "events" (e.g., a shipment status changing to 'Delayed') the moment a database row is updated, placing the event in a high-speed queue.
+1. **Message Broker(e.g., Apache Kafka):** Sits behind the legacy SOAP XML database. Instead of batching data, it detects "events" (e.g., a shipment status changing to 'Delayed') the moment a database row is updated, placing the event in a high-speed queue.
 2. **Transformation Layer (Serverless Function):** An intermediary microservice that picks up the event from the broker, parses the heavy XML, and maps it to a lightweight JSON structure.
 3. **API Gateway (Kong / AWS API Gateway):** The front door. It handles OAuth 2.0 authentication. It reads the partner's profile and routes the JSON payload via an HTTP POST request directly to the partner's registered Webhook URL.
 4. **Fallback Interface:** The API Gateway also caches the latest status so that Tier 2 partners can perform standard REST API `GET` requests if they cannot support webhooks.
@@ -39,7 +39,7 @@ To solve the desync and constraints, we are moving from a synchronous "Pull" mod
 </soapenv:Envelope>
 ```
 
-The Target (Modern JSON Webhook pushed to the Partner CRM):
+**The Target (Modern JSON Webhook pushed to the Partner CRM):**
 
 ```json
 {
@@ -55,9 +55,9 @@ The Target (Modern JSON Webhook pushed to the Partner CRM):
     "full_report": "https://api.logistics.com/v1/freight/TRK-998822"
   }
 }
-Note: The target JSON payload includes a HATEOAS link (full_report). This allows the partner system to immediately trigger a secondary API call if the delayed freight requires a full manifest download.
-```
 
+```
+*Note: The target JSON payload includes a HATEOAS link (full_report). This allows the partner system to immediately trigger a secondary API call if the delayed freight requires a full manifest download.*
 
 
 ## 3. Architecture Decision & Trade-Off Analysis
