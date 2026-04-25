@@ -1,89 +1,78 @@
 # Technical Blueprint: Asynchronous RPA API Bridge
 
-## 1. Architectural Pattern & Diagram
-This solution utilizes the **Asynchronous Request-Reply (Polling) Pattern** combined with **Idempotency** to bridge a fast API Gateway (30-second timeout) with a slow backend UI automation process (~3-minute execution).
+## 1. Architectural Patterns
+This solution utilizes three core enterprise architecture patterns to ensure system resilience and performance:
+1. **Asynchronous Polling:** Bridges the fast API Gateway with the slow backend UI automation process.
+2. **State Management:** Decouples the API from the RPA infrastructure. APIs read strictly from an SQL state table, preventing read-heavy polling from crashing the bot servers.
+3. **Claim Check Pattern (Payload Offloading):** Massive scraped reports are stored in Cloud Blob Storage, returning only a lightweight reference URL to the client to prevent database bloat and API memory exhaustion.
+
+## 2. Sequence Diagram
 
 ```mermaid
 sequenceDiagram
     autonumber
     participant Client
     participant Gateway as API Gateway
-    participant DB as SQL Telemetry DB
+    participant DB as SQL State DB
     participant Queue as BP Work Queue
-    participant Bot as RPA Bot (Blue Prism)
-    participant Vault as Credential Vault
+    participant Bot as RPA Bot
+    participant Blob as S3 Blob Storage
     participant Gov as Target Gov Portal
 
     Client->>Gateway: POST /request {Company_ID}
-    Gateway->>Gateway: Validate API Key & Rate Limits
-    
-    alt Quota Exceeded
-        Gateway-->>Client: 429 Too Many Requests
-    else Quota Valid
-        Gateway->>DB: Log Transaction Start (Billing)
-        Gateway->>Queue: Push Task to Native RPA Queue
-        Gateway-->>Client: 202 Accepted {RequestID}
-    end
+    Gateway->>DB: Insert Row (State: PENDING)
+    Gateway->>Queue: Push Task to RPA Queue
+    Gateway-->>Client: 202 Accepted {RequestID}
 
-    Note over Client, Gateway: Asynchronous Polling Phase
+    Note over Client, DB: Asynchronous Polling Phase
     loop Every 30 Seconds
         Client->>Gateway: GET /status/{RequestID}
-        Gateway->>Queue: Check Task State
-        alt Task Pending/Running
-            Gateway-->>Client: 200 OK {"status": "PROCESSING"}
-        else Task Complete
-            Gateway-->>Client: 200 OK {"status": "COMPLETED", "data": {...}}
-        end
+        Gateway->>DB: SELECT status FROM tbl_Request_State
+        Gateway-->>Client: 200 OK {"status": "PROCESSING"}
     end
 
     Note over Queue, Gov: Backend RPA Execution
     Bot->>Queue: Poll for Pending Task
-    Queue-->>Bot: Assign {Company_ID}
-    Bot->>Vault: Fetch Gov Portal Credentials dynamically
-    Vault-->>Bot: Secure Credential Token
     Bot->>Gov: Authenticate & Scrape DOM Elements
+    Bot->>Bot: Execute JSON Schema Validation
     
-    alt Scrape Success
-        Bot->>Queue: Update Status to "Completed" + JSON Payload
-        Bot->>DB: Log Success for Monthly Billing
-    else Scrape Failure (Captcha/Timeout)
-        Bot->>Queue: Flag as Exception (Route to DLQ / HITL)
+    alt Validation Success
+        Bot->>Blob: Upload Massive JSON Report
+        Blob-->>Bot: Return Secure File URI
+        Bot->>DB: UPDATE State: COMPLETED + URI
+    else Validation Failed (Garbage Data)
+        Bot->>DB: UPDATE State: DLQ_EXCEPTION
     end
 ```
 
-## 2. Component Design & Traffic Flow
-* **API Gateway (Service A, B, C):** Validates the client, enforces Rate Limits, prevents duplicate requests (Idempotency), and pushes the `Company_ID` directly into the Blue Prism REST API Work Queue. 
-* **Blue Prism (Digital Workers):** A shared pool of 5 Windows VMs constantly polls the Work Queue, accesses the target web portal, scrapes the HTML data, formats it to JSON, and updates the queue status.
-* **Telemetry DB (SQL Server):** Records every transaction payload, timestamp, and HTTP status code to the `Usage_DumpUsage` table for monthly client billing and Power BI dashboard analytics.
-* **Credential Vault (CyberArk/Key Vault):** Stores the target portal's credentials. The bot requests the password at runtime in memory, ensuring zero hardcoded credentials exist in the automation scripts.
+## 3. Data Quality & Validation Engine
+To prevent "Garbage In, Garbage Out," the RPA bot implements an internal JSON Schema Validator before any database update occurs.
+* **Rule Enforcement:** Ensures fields like `registration_number` meet strict length/type requirements.
+* **Failure State:** If the Gov portal changes its layout and the bot scrapes corrupted data, the schema validation fails. The bot safely aborts the database transaction (`ROLLBACK`), flags the item as an exception, and routes it to the Human-in-the-Loop (HITL) DLQ.
 
-## 3. API Contract Specifications
+## 4. API Contract Specifications
 
 ### Service A: The Initiator (`POST /api/v1/registry/request`)
-Receives the request and immediately terminates the HTTP connection to prevent 504 Timeouts.
 * **Success Response:** `202 Accepted`
 * **Payload:** Returns a unique `RequestID` and instructions to poll Service B.
 
 ### Service B: The Poller (`GET /api/v1/registry/status/{RequestID}`)
-Queried by the client every 30 seconds to check bot progress.
-* **State 1 (Running):** Returns `200 OK` | `{"status": "PROCESSING"}`
-* **State 2 (Finished):** Returns `200 OK` | `{"status": "COMPLETED", "data": {...}}`
-* **State 3 (HITL Fallback):** Returns `200 OK` | `{"status": "MANUAL_REVIEW", "message": "Routed to operations.", "estimated_completion": "24_HOURS"}`
-
-### Service C: The Audit Trail (`GET /api/v1/registry/history?company_id={ID}`)
-Returns historical API calls utilizing pagination (limit 50 per page) to prevent database payload bloat.
-
-## 4. Resilience & Backpressure Engineering
-To protect the RPA infrastructure from traffic spikes, strict API Rate Limiting is enforced at the Gateway level. If a client exceeds their tier quota, the gateway rejects the payload before it reaches the bot queue.
-
-**HTTP 429 Payload (Rate Limit Exceeded):**
-```http
-HTTP/1.1 429 Too Many Requests
-Retry-After: 3600
-Content-Type: application/json
-
+Returns the state from `tbl_Request_State`. If completed, utilizes the Claim Check pattern to deliver large payloads.
+* **State 1 (Running):** `200 OK` | `{"status": "PROCESSING"}`
+* **State 2 (Completed):** ```json
 {
-  "error_code": "RATE_LIMIT_EXCEEDED",
-  "message": "Quota exceeded. Please wait 3600 seconds."
+  "request_id": "REQ-998877",
+  "status": "COMPLETED",
+  "timestamp": "2026-04-25T19:13:15Z",
+  "data_download_url": "[https://storage.enterprise.com/reports/REQ-998877.json?token=secure123](https://storage.enterprise.com/reports/REQ-998877.json?token=secure123)",
+  "expires_in": "3600_SECONDS"
 }
 ```
+
+### Service C: The Audit Trail (`GET /api/v1/registry/history?company_id={ID}`)
+Returns historical API calls utilizing pagination (limit 50 per page).
+
+## 5. Resilience & Error Handling
+* **API Rate Limiting:** Enforces client-specific quotas (HTTP 429).
+* **Database Failsafes:** An automated SQL Agent Job ("Orphan Sweep") runs every 10 minutes to locate any `RequestID` stuck in the `PROCESSING` state for over 2 hours, automatically moving them to `FAILED` to prevent infinite client polling loops.
+* **Exponential Backoff:** If the bot cannot connect to the SQL DB to mark completion, it utilizes an exponential backoff loop (5s, 15s, 30s) to retry the transaction safely.
