@@ -1,10 +1,3 @@
-# Executive Reading Log: Superforecasting
-
-**Book:** *Superforecasting: The Art and Science of Prediction* by Philip E. Tetlock and Dan Gardner
-**Objective:** Translate probabilistic forecasting models into Enterprise Architecture, Product Strategy, and Agile Delivery.
-
-## Core Insights & Applications
-
-| Date | Chapter / Concept | The Executive Summary (TL;DR) | Application to Architecture & Product | Dojo Scenario Seed |
-| :--- | :--- | :--- | :--- | :--- |
-| YYYY-MM-DD | *To be filled* | *To be filled* | *To be filled* | *To be filled* |
+| Date | Concept | Key Insight | Why It Matters | Application (EA / Product) | My Prediction / Bet | Confidence (%) | What Would Change My Mind | Dojo Scenario |
+|------|--------|------------|----------------|----------------------------|--------------------|----------------|----------------------------|---------------|
+| YYYY-MM-DD | Calibration | Good forecasters think in probabilities, not certainties | Reduces bias in decision-making | Replace binary architecture decisions with confidence-weighted options | "Event-driven architecture adoption will exceed 70% in orgs >5k employees by 2028" | 65% | If monolith tooling drastically improves scalability | Design migration roadmap under uncertainty |
