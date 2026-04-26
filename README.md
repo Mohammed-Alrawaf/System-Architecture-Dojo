@@ -24,7 +24,7 @@ My role sits at the intersection of:
 - Solution Design  
 - Product Ownership  
 - Scrum Management  
-- API & Integration Analysis  
+- System & Integration Analysis  
 - Architecture Documentation  
 
 ---
@@ -32,7 +32,7 @@ My role sits at the intersection of:
 ## Core Focus Areas
 
 - **Enterprise Architecture:** Translating business constraints into practical system designs  
-- **System Integration:** Modernizing legacy systems (SOAP/XML → APIs, JSON, event-driven systems)  
+- **System Integration:** Modernizing legacy systems and designing scalable integration patterns (APIs, messaging, event-driven systems)  
 - **Product Strategy:** Defining MVPs, adoption models, and value delivery  
 - **Agile Delivery:** Converting architecture into executable work (epics, sprints, user stories)  
 
@@ -66,7 +66,7 @@ This file explains **how the system works**.
 It includes:
 - architecture design  
 - system flow and sequence diagrams  
-- API contracts and payloads  
+- service interfaces, data contracts, and payload structures  
 - security and resilience mechanisms  
 
 ---
@@ -115,7 +115,7 @@ This repository evolves over time.
 It reflects:
 - ongoing learning  
 - refinement of thinking  
-- and continuous improvement in how systems are designed  
+- continuous improvement in how systems are designed  
 
 New scenarios are added as new problems are explored,  
 and existing scenarios are refined as understanding deepens.
@@ -136,7 +136,7 @@ This repository is not about perfect solutions.
 It is about:
 - making decisions under constraints  
 - understanding trade-offs  
-- and designing systems that can evolve  
+- designing systems that can evolve  
 
 The focus is not only on **what is built**,  
 but on **how and why it is built**.
