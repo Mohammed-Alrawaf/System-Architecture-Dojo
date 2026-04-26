@@ -1,33 +1,105 @@
 # Scenario 01: Architecture Glossary
 
-This document serves as a translation matrix for the specific technologies and architectural concepts utilized in the Real-Time Alert Gateway scenario. It bridges deep technical execution with executive business strategy.
+This document translates the technical components used in the Real-Time Alert Gateway into clear business and technical language.
 
-## Security & Governance
+The purpose is to bridge the gap between:
+- technical implementation  
+- executive understanding  
+- architectural intent  
+
+---
+
+## 1. Security & Governance
 
 ### HMAC (Hash-based Message Authentication Code)
-* **Executive Summary:** A digital "tamper-evident seal" for data in transit. It ensures that the payload received is exactly what was sent, and that it was sent by an authorized party.
-* **Technical Definition:** A cryptographic authentication technique that uses a shared secret key and a cryptographic hash function (e.g., SHA-256) to sign a JSON payload. The receiving server validates the signature to prevent Man-in-the-Middle (MitM) alterations or DNS hijacking.
+
+**Executive View:**  
+A digital tamper-proof seal that ensures the data received is exactly what was sent and from a trusted source.
+
+**Technical View:**  
+A cryptographic mechanism that uses a shared secret key and hashing algorithm (e.g., SHA-256) to sign a payload.  
+The receiver validates the signature to detect tampering or impersonation attempts.
+
+---
 
 ### Immutable Audit Logs
-* **Executive Summary:** A digital ledger written in permanent ink, secured behind unbreakable glass. Used for strict legal compliance and SLA dispute resolution.
-* **Technical Definition:** A "Write-Once, Read-Many" (WORM) data storage architecture. Once a system event (e.g., an API request) is recorded, it is cryptographically locked. It cannot be altered or deleted, even by database administrators with root access, ensuring absolute non-repudiation.
 
-## Telemetry & Monitoring
+**Executive View:**  
+A permanent, unchangeable record of system activity used for compliance and dispute resolution.
+
+**Technical View:**  
+A Write-Once-Read-Many (WORM) storage model where records cannot be modified or deleted after being written.  
+Ensures non-repudiation and regulatory compliance.
+
+---
+
+## 2. Telemetry & Monitoring
 
 ### Deep Telemetry
-* **Executive Summary:** Moving beyond "is the server on or off?" to measuring the exact heartbeat, blood pressure, and oxygen levels of an IT system in real-time. 
-* **Technical Definition:** The granular, automated collection of system metrics, distributed traces, and log data. It captures exact execution times in milliseconds, payload sizes, and network traversal paths, enabling advanced FinOps billing (cost-to-serve) and precise fault isolation.
 
-## Integration & Infrastructure
+**Executive View:**  
+A detailed health monitoring system that shows exactly how the system behaves in real time.
 
-### Message Broker (e.g., RabbitMQ, Apache Kafka)
-* **Executive Summary:** A highly efficient post office sorting facility. It absorbs massive, sudden spikes in traffic and hands the workload to the servers at a safe, manageable speed so they don't crash.
-* **Technical Definition:** An asynchronous message-queuing middleware that decouples data producers from data consumers. It holds system events in memory queues, allowing for traffic smoothing, guaranteed delivery, and fault-tolerant retry mechanisms.
+**Technical View:**  
+The continuous collection of metrics, logs, and traces that provide visibility into system performance, execution time, payload size, and request paths.  
+Used for troubleshooting, optimization, and cost analysis (FinOps).
+
+---
+
+## 3. Integration & Infrastructure
+
+### Message Broker (e.g., RabbitMQ, Kafka)
+
+**Executive View:**  
+A traffic control system that manages large volumes of data safely and prevents system overload.
+
+**Technical View:**  
+An asynchronous messaging system that decouples producers from consumers.  
+It queues messages and processes them at a controlled rate, enabling scalability, fault tolerance, and retry mechanisms.
+
+---
 
 ### API Gateway (e.g., Kong, AWS API Gateway)
-* **Executive Summary:** The heavily armed bouncer at the front door of your IT estate. It checks IDs, enforces VIP rules, kicks out abusers, and counts exactly who enters.
-* **Technical Definition:** A reverse proxy that sits between external clients and internal backend services. It centralizes cross-cutting concerns such as OAuth 2.0 authentication, strict rate limiting, payload inspection, and request routing, eliminating the need to code these security features into every individual microservice.
+
+**Executive View:**  
+The secure front door of the system that controls access, enforces rules, and monitors usage.
+
+**Technical View:**  
+A reverse proxy layer that handles authentication, rate limiting, routing, and request validation between external clients and backend services.  
+Centralizes cross-cutting concerns such as security and traffic management.
+
+---
 
 ### Enterprise Service Bus / iPaaS (e.g., IBM webMethods)
-* **Executive Summary:** A massive, fully-staffed digital fulfillment center. It handles receiving, translating, sorting, and shipping all under one proprietary roof, bought off-the-shelf.
-* **Technical Definition:** A Commercial Off-The-Shelf (COTS) integration platform. It acts as a combined API Gateway, Message Broker, and Visual Data Transformation engine. While highly secure and robust for legacy modernization, it carries high licensing costs compared to composable open-source cloud architectures.
+
+**Executive View:**  
+A fully integrated platform that handles data transformation, routing, and system communication in one place.
+
+**Technical View:**  
+A commercial integration platform that combines API management, message brokering, and data transformation capabilities.  
+Often used in enterprise environments for legacy system integration, though typically at a higher licensing cost.
+
+---
+
+## 4. Design Patterns Used in This Scenario
+
+### Claim Check Pattern
+
+**Executive View:**  
+A way to handle large data safely by sending a link instead of the full data.
+
+**Technical View:**  
+A pattern where large payloads are stored externally, and only a reference (URL) is sent through the system.  
+Prevents performance issues and reduces load on receiving systems.
+
+---
+
+## 5. Why This Matters
+
+This glossary ensures that:
+
+- Technical decisions are understandable at the executive level  
+- Business stakeholders can follow architectural discussions  
+- Teams share a consistent understanding of key concepts  
+
+> Clear language reduces risk, improves alignment, and accelerates delivery.
