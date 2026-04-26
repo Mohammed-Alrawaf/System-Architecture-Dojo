@@ -1,0 +1,12 @@
+# Executive Reading Log: Atomic Habits
+
+## Insight Log
+
+| Date | Concept | Key Insight | Application to Architecture | Scenario Link |
+|------|--------|------------|-----------------------------|----------------|
+| 2026-04-11 | 1% Improvement | Small consistent improvements compound over time | Evolve systems incrementally instead of big rewrites | RPA Modernization Scenario |
+| 2026-04-14 | Identity-Based Change | Systems should evolve based on long-term identity, not short-term fixes | Define target architecture identity (event-driven, API-first) before implementation | API Gateway Scenario |
+| 2026-04-18 | Habit Loop | Behavior is driven by cue → routine → reward | Design developer workflows and APIs that are easy to adopt | Integration Platform Scenario |
+| 2026-04-20 | Embrace Boredome | success comes as your overcome and embrace and love the boring side of things. As will always be there |Documentation and repititive work | all |
+| 2026-04-20 | the Off Days | Important to keep doing and performing on the bad days, and showing up as they define you | Design, solutions, and daily routine tasks | all |
+| 2026-04-20 | how a habit forms | understanding the Cue and controling the environment is key to controlling what you will do | Improvements | all |
