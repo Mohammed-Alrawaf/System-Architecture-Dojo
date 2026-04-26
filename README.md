@@ -42,7 +42,7 @@ My role sits at the intersection of:
 
 This repository is structured around real-world architecture scenarios.
 
-Each scenario is divided into three core documents.
+Each scenario is divided into four core documents.
 
 ---
 
@@ -50,6 +50,7 @@ Each scenario is divided into three core documents.
 
 ```text
 Scenario
+├── Executive Summary
 ├── Technical Blueprint
 ├── Strategy
 └── Glossary
@@ -59,7 +60,21 @@ Scenario
 
 ### Recommended Reading Flow
 
-#### 1. Technical Blueprint (Start Here)
+#### 1. Executive Summary (Start Here)
+
+This file provides a **high-level view of the problem and solution**.
+
+It includes:
+- business context  
+- objectives  
+- key decisions  
+- trade-offs  
+- risks  
+- overall outcome  
+
+---
+
+#### 2. Technical Blueprint
 
 This file explains **how the system works**.
 
@@ -71,7 +86,7 @@ It includes:
 
 ---
 
-#### 2. Strategy (Core of the Scenario)
+#### 3. Strategy (Core of the Scenario)
 
 This is the most important file.
 
@@ -87,7 +102,7 @@ It includes:
 
 ---
 
-#### 3. Glossary (Read Anytime)
+#### 4. Glossary (Read Anytime)
 
 This file explains **technical concepts in plain language**.
 
@@ -101,9 +116,10 @@ It is designed to:
 ### How Everything Connects
 
 ```text
-Technical Blueprint → shows the solution
-Strategy            → explains the decisions
-Glossary            → explains the terminology
+Executive Summary → business view
+Technical Blueprint → system design
+Strategy → decision-making
+Glossary → shared understanding
 ```
 
 ---
