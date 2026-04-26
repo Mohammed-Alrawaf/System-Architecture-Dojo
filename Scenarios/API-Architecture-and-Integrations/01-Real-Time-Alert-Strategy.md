@@ -227,6 +227,36 @@ The chosen design is intentionally pragmatic.
 
 It does not attempt to solve every future problem in Phase 1. Instead, it creates a controlled modernization path that balances cost, risk, regulatory pressure, and partner adoption.
 
+## What I Would Do Differently (Iteration Thinking)
+
+### Phase 2 Improvements
+
+- Introduce event streaming (Kafka/Event Hubs) if real-time requirements increase  
+- Automate REST fallback onboarding through a developer portal  
+- Enhance partner self-service monitoring and alerting  
+
+---
+
+### Assumptions That May Fail
+
+- Assumption: Partners will adopt webhooks quickly  
+  → Risk: Some partners may resist change longer than expected  
+
+- Assumption: Nightly ETL latency is acceptable  
+  → Risk: Business may require near-real-time updates  
+
+- Assumption: Payload sizes remain manageable  
+  → Risk: High shipment volume could increase payload complexity  
+
+---
+
+### What I Would Simplify
+
+- Reduce initial scope of telemetry to essential metrics only  
+- Delay advanced monetization features until adoption stabilizes  
+- Avoid introducing CDC early unless business demand is proven  
+
+
 ## Personal Reflection
 
 This scenario highlights the importance of balancing:
