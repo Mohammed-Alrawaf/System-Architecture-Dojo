@@ -226,3 +226,22 @@ The real architectural move is shifting the business from:
 The chosen design is intentionally pragmatic.
 
 It does not attempt to solve every future problem in Phase 1. Instead, it creates a controlled modernization path that balances cost, risk, regulatory pressure, and partner adoption.
+
+## Personal Reflection
+
+This scenario highlights the importance of balancing:
+- technical capability  
+- partner readiness  
+- cost constraints  
+- regulatory limitations  
+
+The solution is intentionally pragmatic.
+
+Instead of aiming for perfect real-time architecture, it focuses on:
+- controlled modernization  
+- measurable improvement  
+- and realistic adoption  
+
+This reflects a shift in thinking:
+from “best technical solution”  
+to “best decision under constraints”
