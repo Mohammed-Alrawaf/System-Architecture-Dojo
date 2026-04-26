@@ -2,9 +2,9 @@
 
 ## Problem
 
-The existing logistics system relies on a pull-based model where external partners must repeatedly query for shipment updates.
+Partners rely on repeated polling to retrieve shipment updates.
 
-This results in:
+This leads to:
 - unnecessary system load  
 - delayed data synchronization  
 - increased operational cost  
@@ -14,71 +14,48 @@ This results in:
 
 ## Objective
 
-Shift from a pull-based model to a push-based architecture that:
-
-- reduces unnecessary traffic  
-- improves data delivery speed  
-- supports partner integration  
-- enables future scalability  
+Enable event-driven data delivery that:
+- reduces system load  
+- improves data timeliness  
+- supports scalable partner integration  
 
 ---
 
 ## Solution
 
-Introduce a **webhook-based gateway** that pushes shipment updates to partners when events occur.
+Introduce a **webhook-based alert gateway** that pushes updates when events occur.
 
-Key components:
-
-- API Gateway to manage access and delivery  
-- transformation layer to convert legacy data formats  
-- message handling for controlled delivery  
-- secure payload signing for data integrity  
+Core elements:
+- API Gateway for access control and routing  
+- transformation layer for legacy data formats  
+- controlled delivery mechanism with retry handling  
 
 ---
 
 ## Key Decisions
 
-- Use webhooks instead of polling as the primary integration model  
-- Retain REST fallback for partners not ready for adoption  
-- Keep existing batch process to avoid backend risk  
-- Use Claim Check Pattern for large payload scenarios  
+- Replace polling with webhook-based delivery  
+- retain REST fallback for partner readiness  
+- keep existing batch process to reduce backend risk  
 
 ---
 
 ## Trade-Offs
 
-- Data delivery is automated but still dependent on batch timing  
-- Partner adoption may vary  
-- Additional complexity introduced for fallback mechanisms  
-
----
-
-## Risks
-
-- Partners may resist webhook adoption  
-- Payload size may grow unexpectedly  
-- Legacy system limitations may delay real-time improvements  
+- delivery becomes real-time, but data remains batch-dependent  
+- partner adoption may vary  
+- fallback mechanisms add complexity  
 
 ---
 
 ## Outcome
 
-This design:
-
-- reduces unnecessary system load  
+- reduces unnecessary traffic  
 - improves partner experience  
-- creates a foundation for scalable integration  
-- enables controlled modernization without high risk  
+- enables scalable integration  
 
 ---
 
 ## Strategic View
 
-This is not a full real-time transformation.
-
-It is a **pragmatic step toward modernization**, balancing:
-
-- cost  
-- risk  
-- partner readiness  
-- system limitations  
+A pragmatic step toward event-driven architecture without disrupting legacy systems.
