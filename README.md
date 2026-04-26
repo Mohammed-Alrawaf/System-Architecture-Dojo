@@ -1,39 +1,68 @@
 # System Architecture & Product Strategy Portfolio
 
-Welcome to my workspace. I use this repository to document how I tackle enterprise IT problems and design systems that align with actual business goals.
+Welcome to my workspace.
 
-My role is about bridging the gap between executives and development teams. I don't write production code; I define the blueprint. My focus is on mapping out legacy integrations, defining API governance, and making sure we account for technical and business constraints before the development team starts building.
+I use this repository to document how I tackle enterprise IT problems and design systems that align with actual business goals.
 
-## 🏢 Professional Profile
-I'm currently a System Analyst in the FinTech sector (Credit Bureau). On a day-to-day basis, I wear a few different hats, moving between Solution Design, Product Ownership, and Scrum Management.
+My role is about bridging the gap between executives and development teams. I do not write production code; I define the blueprint.
 
-**Education & Certifications:**
-* **Architecture & IT Service:** TOGAF 10 Foundation (Practitioner in progress), ITIL 4 Service Management
-* **Agile & Product:** Certified Scrum Master (CSM), Certified Product Owner (CPO)
-* **Education:** MBA at Al-Yamamah University (In Progress)
-* **Cloud & Integration:** API Academy (Security Architecture & Design), AWS Solutions Architect (In Progress)
-
-## 🗂️ Core Focus Areas
-* **Enterprise Architecture:** Turning business constraints (like data sovereignty and budget) into practical system designs and Architecture Decision Records (ADRs).
-* **System Integration:** Legacy modernization, specifically mapping legacy SOAP XML backends to modern JSON APIs and event-driven architectures.
-* **Product Management:** Defining MVPs, exploring API monetization, and making sure technical roadmaps deliver real ROI.
-* **Agile Delivery:** Taking high-level architecture blueprints and breaking them down into Epics, Sprints, and user stories in TFS/Azure DevOps.
+My focus is on mapping legacy integrations, defining API governance, and making sure technical and business constraints are understood before development begins.
 
 ---
 
-## 📂 How This Repository is Organized
+## Professional Profile
 
+I am currently a System Analyst in the FinTech sector, working in the credit bureau domain.
 
-### 1. Architecture Scenarios (Root Folder)
-Each scenario is numbered (e.g., `01`, `02`) and broken down into three files to give a complete view of the problem:
-* **The Technical Blueprint (`-Gateway.md`):** The system design, payload structures, and sequence flows.
-* **The Strategy & Decision Matrix (`-Strategy.md`):** The ADR detailing edge cases, business pivots (like cloud bans or budget cuts), and the "why" behind the design choices.
-* **The Scenario Glossary (`-Glossary.md`):** Plain-English translations of the technical terminology used in that specific scenario.
+On a day-to-day basis, I move between:
 
-### 2. Executive Knowledge Base (`/Executive-Knowledge-Base/`)
-A folder for continuous learning and mental models.
-* **Book Logs:** My notes translating concepts from books (like *Superforecasting*) into actionable IT and product practices.
-* **Global Architecture Glossary:** An ongoing dictionary bridging technical jargon with executive business strategy.
+- Solution Design
+- Product Ownership
+- Scrum Management
+- API and integration analysis
+- Architecture documentation
+
+### Education & Certifications
+
+- **Architecture & IT Service:** TOGAF 10 Foundation, TOGAF Practitioner in progress, ITIL 4 Service Management
+- **Agile & Product:** Certified Scrum Master (CSM), Certified Product Owner (CPO)
+- **Education:** MBA at Al-Yamamah University, in progress
+- **Cloud & Integration:** API Academy Security Architecture & Design, AWS Solutions Architect in progress
 
 ---
-*My design philosophy: A good architecture doesn't just work on day one; it survives the business changing its mind on day two.*
+
+## Core Focus Areas
+
+- **Enterprise Architecture:** Turning business constraints, such as data sovereignty and budget limitations, into practical system designs and Architecture Decision Records.
+- **System Integration:** Modernizing legacy systems, especially mapping SOAP/XML backends to modern JSON APIs and event-driven architectures.
+- **Product Management:** Defining MVPs, exploring API monetization, and ensuring technical roadmaps deliver business value.
+- **Agile Delivery:** Translating high-level architecture blueprints into epics, sprints, and user stories in TFS / Azure DevOps.
+
+---
+
+## How This Repository Is Organized
+
+### 1. Architecture Scenarios
+
+Each scenario is numbered and broken into supporting documents that explain the problem, the solution, and the reasoning behind the design.
+
+Each scenario typically contains:
+
+- **Technical Blueprint:** System design, payload structures, API contracts, and sequence flows.
+- **Strategy & Decision Matrix:** Architecture decisions, trade-offs, business constraints, and reasoning.
+- **Scenario Glossary:** Plain-English explanations of technical terminology used in the scenario.
+
+### 2. Executive Knowledge Base
+
+The `Executive-Knowledge-Base` folder is used for continuous learning and mental models.
+
+It includes:
+
+- **Book Logs:** Notes that translate concepts from books, such as *Superforecasting*, into practical architecture, product, and delivery practices.
+- **Architecture Glossary:** A growing dictionary that connects technical language with business strategy.
+
+---
+
+## Design Philosophy
+
+> A good architecture does not just work on day one; it survives the business changing its mind on day two.
