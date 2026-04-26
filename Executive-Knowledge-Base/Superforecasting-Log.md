@@ -1,116 +1,52 @@
 # Executive Reading Log: Superforecasting
 
-**Book:** *Superforecasting: The Art and Science of Prediction*  
-**Objective:** Improve decision-making by thinking in probabilities, not certainties.
+**Book:** *Superforecasting*  
+**Objective:** Think in probabilities and improve decision-making under uncertainty.
 
 ---
 
-## Core Principle
+## Insight Log (Evolving)
 
-> The goal is not to be right.  
-> The goal is to be **less wrong over time**.
+### Illusion of Knowledge
 
----
+- Humans are overconfident in their understanding  
+- We don’t measure prediction accuracy  
+- Certainty is often an illusion  
 
-## Insight Log
-
-### 1. Illusion of Knowledge
-
-**Insight:**  
-We believe we understand the world better than we actually do.
-
-**Reality:**  
-Most predictions fail not because the world is unpredictable,  
-but because we are overconfident and don’t measure accuracy.
+**Architecture Application:**
+- Avoid presenting solutions as “certain”  
+- Start expressing decisions in probabilities  
 
 ---
 
-### 2. Prediction Exists on a Spectrum
+### Prediction Spectrum
 
-**Insight:**  
-Not all predictions are equal.
-
-- Short-term → more accurate  
-- Long-term → less accurate  
+- Short-term predictions → more accurate  
+- Long-term predictions → less accurate  
 - Stable systems → predictable  
 - Complex systems → uncertain  
 
 ---
 
-### 3. Certainty is the Problem
+### First Mental Shift
 
-**Insight:**  
-We think in “yes / no” instead of probabilities.
-
-**Upgrade in Thinking:**
-- Instead of: “This will work”  
-- Say: “There is a 70% chance this will work”
+- Replace:
+  - “This will work”  
+- With:
+  - “This has ~70% chance of working”  
 
 ---
 
-### 4. Examples (From My Thinking)
+## Running Application Notes
 
-**High Confidence Predictions:**
-- The car in front of me will stop at a red light → ~95%  
-- My family will be home on Thursday → ~80–90%  
-
-**Low Confidence Predictions:**
-- Global events (e.g., pandemics, economic shocks) → unpredictable  
+- Start assigning probability to architecture decisions  
+- Track uncertainty explicitly  
+- Revisit and update decisions  
 
 ---
 
-### 5. Key Realization
+## Rule Going Forward
 
-> The farther into the future we predict,  
-> the more uncertainty increases.
-
----
-
-### 6. What This Means for Architecture
-
-**Problem Today:**
-Architects present decisions as:
-- “This is the best solution”
-
-**Better Approach:**
-- “This solution has ~70% chance of meeting requirements under current assumptions”
-
----
-
-### 7. Personal Shift
-
-Before:
-- Thinking in certainty  
-- Defending decisions  
-
-After:
-- Thinking in probabilities  
-- Updating beliefs  
-
----
-
-## Early Takeaway
-
-- Prediction is possible  
-- But accuracy depends on:
-  - time horizon  
-  - system complexity  
-  - ability to update beliefs  
-
----
-
-## First Application Idea
-
-In future scenarios, I will:
-
-- Assign probability to architecture decisions  
-- Identify uncertainty explicitly  
-- Revisit decisions and update them  
-
-Example:
-
-> “Webhook architecture has ~65% chance of meeting partner adoption goals”  
-
-instead of:
-
-> “Webhook architecture is the best solution”
+- Add **1 insight per chapter max**
+- Keep each insight under **5 lines**
+- Refine existing insights instead of adding new sections
