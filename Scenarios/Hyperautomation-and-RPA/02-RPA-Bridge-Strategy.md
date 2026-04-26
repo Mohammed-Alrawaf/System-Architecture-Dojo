@@ -261,6 +261,36 @@ It accepts that RPA is not the perfect long-term architecture, but uses it as a 
 
 ---
 
+## What I Would Do Differently (Iteration Thinking)
+
+### Phase 2 Improvements
+
+- Replace RPA with direct API integration if government system exposes APIs  
+- Introduce intelligent retry logic based on failure type (captcha vs timeout)  
+- Add predictive monitoring to detect portal instability  
+
+---
+
+### Assumptions That May Fail
+
+- Assumption: Government portal structure remains stable  
+  → Risk: UI changes may break scraping logic  
+
+- Assumption: RPA reliability is acceptable for SLA commitments  
+  → Risk: Bot failures may increase under load  
+
+- Assumption: HITL workload remains manageable  
+  → Risk: Manual intervention may scale beyond operational capacity  
+
+---
+
+### What I Would Simplify
+
+- Reduce over-engineering of API layers if request volume remains low  
+- Delay advanced analytics until usage patterns are clear  
+- Limit initial portal coverage to a single use case  
+
+
 ## 13. Personal Reflection
 
 This scenario highlights the importance of separating the user-facing experience from backend execution constraints.
