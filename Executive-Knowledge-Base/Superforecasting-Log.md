@@ -9,13 +9,15 @@
 
 ### Illusion of Knowledge
 
-- Humans are overconfident in their understanding  
-- We don’t measure prediction accuracy  
-- Certainty is often an illusion  
+- Humans are overconfident, but the deeper issue is:
+  - we unknowingly replace hard questions with easier ones  
+- The brain prefers quick answers (System 1), even when wrong  
+- Certainty often comes from answering the wrong problem  
 
 **Architecture Application:**
-- Avoid presenting solutions as “certain”  
-- Start expressing decisions in probabilities  
+- Always ask: “What question am I actually answering?”  
+- Challenge first solutions — they may solve a simplified problem  
+- Avoid “clean designs” that ignore real constraints  
 
 ---
 
@@ -40,13 +42,15 @@
 ## Running Application Notes
 
 - Start assigning probability to architecture decisions  
+- Assign probability AND revisit accuracy later  
 - Track uncertainty explicitly  
 - Revisit and update decisions  
+- Check for “bait-and-switch” thinking in every design  
 
 ---
 
 ## Rule Going Forward
 
-- Add **1 insight per chapter max**
-- Keep each insight under **5 lines**
-- Refine existing insights instead of adding new sections
+- Add **1 insight per chapter max**  
+- Keep each insight under **5 lines**  
+- Refine existing insights instead of adding new sections  
