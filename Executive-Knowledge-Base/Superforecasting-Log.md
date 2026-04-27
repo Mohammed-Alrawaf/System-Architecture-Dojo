@@ -21,6 +21,73 @@
 
 ---
 
+#### Deep Dive (Thinking Layer)
+
+**Bait-and-Switch Thinking**
+
+When I face a hard problem, my brain may silently replace it with an easier one.
+
+Example:
+
+Real question:
+```text
+Is this architecture scalable under real-world constraints and failure conditions?
+```
+
+Replaced question:
+```text
+Does this architecture look clean and well-designed?
+```
+
+---
+
+**System 1 vs System 2**
+
+- System 1:
+  - fast, intuitive, confident  
+  - based on experience  
+  - can be very wrong  
+
+- System 2:
+  - slow, analytical  
+  - requires effort  
+  - more accurate  
+
+> System 1 does not say “I don’t know” — it gives an answer anyway.
+
+---
+
+**Role of Doubt**
+
+Doubt is not weakness — it is a thinking tool.
+
+Good doubt:
+- questions assumptions  
+- challenges first answers  
+- looks for failure points  
+
+Bad doubt:
+- overthinking  
+- no decisions  
+
+---
+
+**Architecture Thinking Questions**
+
+```text
+What question am I actually answering?
+
+Did I simplify the problem without realizing it?
+
+What assumptions am I making?
+
+What would break this design?
+
+What am I ignoring because it is difficult?
+```
+
+---
+
 ### Prediction Spectrum
 
 - Short-term predictions → more accurate  
@@ -53,4 +120,5 @@
 
 - Add **1 insight per chapter max**  
 - Keep each insight under **5 lines**  
+- Add Deep Dive only when needed  
 - Refine existing insights instead of adding new sections  
