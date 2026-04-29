@@ -1,10 +1,10 @@
-# Enterprise Product Architecture & System Strategy Portfolio
+# System Architecture & Product Strategy Portfolio
 
 Welcome to my workspace.
 
 This repository documents how I approach enterprise system design under real-world constraints.
 
-It is not focused on code implementation. It is focused on **Enterprise Product Architecture**—the intersection where commercial viability meets technical execution.
+It is not focused on code implementation. It is focused on the intersection where commercial viability meets technical execution.
 
 It focuses on:
 - architecture thinking  
@@ -18,9 +18,9 @@ The goal is to demonstrate how technical solutions align with business needs, mo
 
 ## Professional Profile
 
-I am currently a System Analyst in the FinTech sector (credit bureau domain), driving systems analysis while engineering my transition into Enterprise Product Architecture.
+I am currently a System Analyst in the FinTech sector (credit bureau domain). 
 
-My role sits squarely at the intersection of:
+My daily execution sits squarely at the intersection of business strategy and technical design, focusing on:
 
 - Solution Design & API Integration  
 - Product Strategy & Ownership  
