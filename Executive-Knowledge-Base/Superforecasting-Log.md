@@ -334,7 +334,7 @@ I realized:
 
 ```mermaid
 flowchart TD
-    A["Dragonfly Eye<br/>See the same problem from multiple independent perspectives"] --> B["Start Here<br/>What decision or problem am I evaluating?"]
+    A["Dragonfly Eye<br/>See the same problem from multiple independent perspectives"] --> B["Start<br/>What decision or problem am I evaluating?"]
     B --> C["My First Answer"]
     C --> D["Pause"]
     D --> E["Apply the Lenses"]
