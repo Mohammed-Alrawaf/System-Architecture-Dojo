@@ -261,6 +261,28 @@ What breaks first?
 ```
 ---
 ---
+**Creer Lenses**
+```
+Current self:
+Does this opportunity excite me?
+
+Future self:
+Will this compound over 3 years?
+
+Family lens:
+Does this affect stability or time?
+
+Financial lens:
+Does this improve or weaken my position?
+
+Learning lens:
+Will I grow from this?
+
+Risk lens:
+What could go wrong?
+```
+---
+---
 
 **Personal Reflection**
 
