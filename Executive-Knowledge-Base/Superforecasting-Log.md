@@ -106,6 +106,164 @@ What am I ignoring because it is difficult?
 
 ---
 
+### Keeping Score
+
+- Vague statements are useless — if it cannot be measured, it is not a forecast  
+- Probabilities are often misunderstood (e.g., 70% does not mean certainty)  
+- Without tracking accuracy, improvement is impossible  
+- Experts are not necessarily good forecasters  
+
+**Architecture Application:**
+- Express decisions with measurable outcomes  
+- Avoid vague statements like “likely” or “should work”  
+- Revisit decisions and evaluate accuracy  
+- Separate expertise from prediction quality  
+
+---
+
+#### Deep Dive (Thinking Layer)
+
+**Vagueness Problem**
+
+Words like:
+- “likely”
+- “possible”
+- “high chance”
+
+are interpreted differently by different people.
+
+> If a statement cannot be measured, it cannot be improved.
+
+---
+
+**Probability Misuse**
+
+People assign percentages but behave as if outcomes are certain.
+
+Example:
+
+```text
+“70% chance” → treated as “this will happen”
+```
+
+This leads to:
+- overconfidence  
+- poor decision evaluation  
+
+---
+
+**Brier Score (Core Concept)**
+
+A scoring method used to measure forecast accuracy.
+
+The deeper lesson:
+
+> Without measuring prediction accuracy, there is no learning.
+
+This introduces a new discipline:
+
+```text
+Make prediction → Track outcome → Compare → Improve
+```
+
+---
+
+**Architecture Application**
+
+I should start tracking decisions like this:
+
+```text
+Decision:
+“This architecture will handle peak load.”
+
+Prediction:
+70% confidence
+
+Outcome:
+After testing / production
+
+Result:
+Was I correct?
+What did I miss?
+What should I adjust next time?
+```
+
+---
+
+**Expert Problem**
+
+Experts may have deep knowledge, but still produce poor predictions.
+
+> Knowledge does not automatically equal forecasting accuracy.
+
+This means I should respect expertise, but still ask:
+- Was the prediction measurable?
+- Was the confidence level clear?
+- Was the outcome tracked?
+
+---
+
+**Dragonfly Eye**
+
+> Seeing the same problem from multiple independent perspectives.
+
+This is not just collecting opinions.
+
+It is:
+- breaking a problem into different viewpoints  
+- combining multiple mental models  
+- avoiding single-perspective bias  
+
+---
+
+**Architecture Thinking Application**
+
+Instead of asking:
+
+```text
+Is this a good architecture?
+```
+
+Ask:
+
+```text
+How would:
+- an operations engineer see this?
+- a compliance officer see this?
+- a customer experience lead see this?
+- a security architect see this?
+- a product owner see this?
+- a failure scenario expose weaknesses?
+```
+
+---
+
+**Personal Reflection**
+
+I realized:
+
+- I rarely measure if my decisions were correct  
+- I sometimes use vague language when uncertain  
+- I may rely too much on a single perspective when designing  
+- I need to practice disciplined doubt without falling into overthinking  
+
+---
+
+**How I Will Apply This**
+
+- Assign probability to important decisions  
+- Track outcomes after testing or implementation  
+- Avoid vague wording in architecture discussions  
+- Use Dragonfly Eye to evaluate designs from multiple perspectives  
+- Revisit assumptions instead of defending old decisions  
+
+---
+
+> Good thinking is not about being right once,  
+> but about improving accuracy over time.
+
+---
+
 ## Running Application Notes
 
 - Start assigning probability to architecture decisions  
@@ -113,12 +271,14 @@ What am I ignoring because it is difficult?
 - Track uncertainty explicitly  
 - Revisit and update decisions  
 - Check for “bait-and-switch” thinking in every design  
+- Use Dragonfly Eye before finalizing important decisions  
+- Replace vague wording with measurable claims  
 
 ---
 
 ## Rule Going Forward
 
 - Add **1 insight per chapter max**  
-- Keep each insight under **5 lines**  
-- Add Deep Dive only when needed  
-- Refine existing insights instead of adding new sections  
+- Keep each main insight short  
+- Add Deep Dive only when the idea is worth keeping  
+- Refine existing insights instead of adding too many new sections  
