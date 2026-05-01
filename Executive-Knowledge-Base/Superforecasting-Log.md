@@ -30,11 +30,13 @@ When I face a hard problem, my brain may silently replace it with an easier one.
 Example:
 
 Real question:
+
 ```text
 Is this architecture scalable under real-world constraints and failure conditions?
 ```
 
 Replaced question:
+
 ```text
 Does this architecture look clean and well-designed?
 ```
@@ -235,9 +237,12 @@ How would:
 - a product owner see this?
 - a failure scenario expose weaknesses?
 ```
+
 ---
-**Lenses to use as an example**
-```
+
+**Lenses to Use as an Example**
+
+```text
 From the customer lens:
 Does this improve the user experience?
 
@@ -259,10 +264,12 @@ What does this cost to run and maintain?
 From the failure lens:
 What breaks first?
 ```
+
 ---
----
+
 **Career Lenses**
-```
+
+```text
 Current self:
 Does this opportunity excite me?
 
@@ -281,42 +288,130 @@ Will I grow from this?
 Risk lens:
 What could go wrong?
 ```
+
 ---
----
+
 **Daily Practice for Dragonfly Eye**
-```
+
+```text
 1. Write your first answer
 2. Ask: “What lens am I missing?”
 3. Add 3 more perspectives
 4. Look for contradictions
 5. Update your decision
 ```
+
 ---
+
+### Superforecasters
+
+- Forecasting skill can be real and measurable  
+- Ordinary people can outperform experts when accuracy is tracked  
+- Credentials and seniority do not automatically equal better judgment  
+- Regression to the mean helps separate luck from repeated skill  
+
+**Architecture Application:**
+- Do not accept decisions only because they come from senior people, vendors, or experts  
+- Evaluate decisions based on reasoning, assumptions, evidence, and outcomes  
+- Track whether predictions were accurate over time  
+- Look for people who update their thinking, not only people who sound confident  
+
+---
+
+#### Deep Dive (Thinking Layer)
+
+**Main Insight**
+
+> Do not ask only: “Who said it?”  
+> Ask: “How would we know if this is true?”
+
+This is one of the most important lessons for architecture work.
+
+In meetings, people often overvalue:
+- title  
+- seniority  
+- confidence  
+- vendor reputation  
+- expert language  
+
+But forecasting teaches that judgment should be tested.
+
+---
+
+**Expertise vs Forecasting Accuracy**
+
+Expertise matters, but it does not automatically create accurate forecasts.
+
+An expert may:
+- understand the domain deeply  
+- have strong credentials  
+- speak confidently  
+
+But still be wrong if they:
+- do not update beliefs  
+- ignore feedback  
+- rely on fixed assumptions  
+- avoid measurable predictions  
+
+---
+
+**Regression to the Mean**
+
+A single correct prediction may be luck.
+
+Repeated accuracy over time is more meaningful.
+
+This means I should avoid overreacting to one success or one failure.
+
+Better question:
+
+```text
+Has this person, team, or method been accurate repeatedly?
+```
+
+---
+
+**Architecture Thinking Application**
+
+In architecture reviews, I should ask:
+
+```text
+Is this recommendation supported by evidence or authority?
+
+What assumptions are behind this decision?
+
+How would we validate whether this is true?
+
+What result would prove this decision wrong?
+
+Has this team or vendor been accurate in similar situations before?
+
+Are we confusing confidence with competence?
+```
+
 ---
 
 **Personal Reflection**
 
-I realized:
+I realized I may sometimes give too much weight to:
+- senior opinions  
+- vendor recommendations  
+- confident explanations  
+- expert-sounding language  
 
-- I rarely measure if my decisions were correct  
-- I sometimes use vague language when uncertain  
-- I may rely too much on a single perspective when designing  
-- I need to practice disciplined doubt without falling into overthinking  
+The better approach is:
 
----
-
-**How I Will Apply This**
-
-- Assign probability to important decisions  
-- Track outcomes after testing or implementation  
-- Avoid vague wording in architecture discussions  
-- Use Dragonfly Eye to evaluate designs from multiple perspectives  
-- Revisit assumptions instead of defending old decisions  
+```text
+Respect expertise
+Question assumptions
+Track outcomes
+Update beliefs
+```
 
 ---
 
-> Good thinking is not about being right once,  
-> but about improving accuracy over time.
+> Good judgment is not proven by confidence.  
+> It is proven by repeated accuracy over time.
 
 ---
 
@@ -328,9 +423,13 @@ I realized:
 - Check for “bait-and-switch” thinking in every design  
 - Use Dragonfly Eye before finalizing important decisions  
 - Replace vague wording with measurable claims  
+- Respect expertise, but validate claims  
+- Ask: “How would we know if this is true?”  
+- Avoid confusing confidence with competence  
 
 ---
----
+
+## Dragonfly Eye Map
 
 ```mermaid
 flowchart TD
@@ -370,4 +469,5 @@ flowchart TD
     I3 --> J
     I4 --> J
 ```
+
 ---
