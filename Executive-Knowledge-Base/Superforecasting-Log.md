@@ -235,7 +235,31 @@ How would:
 - a product owner see this?
 - a failure scenario expose weaknesses?
 ```
+---
+**Lenses to use as an example**
+```
+From the customer lens:
+Does this improve the user experience?
 
+From the operations lens:
+Can this be supported at 2 AM?
+
+From the security lens:
+Where could this be abused?
+
+From the compliance lens:
+Can this decision be explained and audited?
+
+From the product lens:
+Does this create measurable value?
+
+From the finance lens:
+What does this cost to run and maintain?
+
+From the failure lens:
+What breaks first?
+```
+---
 ---
 
 **Personal Reflection**
