@@ -283,6 +283,16 @@ What could go wrong?
 ```
 ---
 ---
+**Daily Practice for Dragonfly Eye**
+```
+1. Write your first answer
+2. Ask: “What lens am I missing?”
+3. Add 3 more perspectives
+4. Look for contradictions
+5. Update your decision
+```
+---
+---
 
 **Personal Reflection**
 
