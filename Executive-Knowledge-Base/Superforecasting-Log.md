@@ -330,3 +330,44 @@ I realized:
 - Replace vague wording with measurable claims  
 
 ---
+---
+
+```mermaid
+flowchart TD
+    A["Dragonfly Eye<br/>See the same problem from multiple independent perspectives"] --> B["Start Here<br/>What decision or problem am I evaluating?"]
+    B --> C["My First Answer"]
+    C --> D["Pause"]
+    D --> E["Apply the Lenses"]
+
+    E --> T["Technical Lens<br/>Does this work technically?<br/>Is it scalable, maintainable, and realistic?"]
+    E --> O["Operations Lens<br/>Can this be supported in production?<br/>What happens at 2 AM?"]
+    E --> S["Security Lens<br/>Where can this fail or be abused?<br/>What are the risks?"]
+    E --> C1["Compliance Lens<br/>Can this be explained, audited, and defended?"]
+    E --> P["Product Lens<br/>Does this solve the real problem?<br/>Does it create value?"]
+    E --> U["Customer Lens<br/>Does this improve the user experience?<br/>Does it reduce friction?"]
+    E --> F["Finance Lens<br/>What does it cost to build, run, and maintain?"]
+    E --> X["Failure Lens<br/>What breaks first?<br/>What is the weakest point?"]
+    E --> G["Future Lens<br/>Will this still make sense in 1–3 years?<br/>Can it evolve?"]
+
+    T --> H["Update My View"]
+    O --> H
+    S --> H
+    C1 --> H
+    P --> H
+    U --> H
+    F --> H
+    X --> H
+    G --> H
+
+    H --> I["Final Questions"]
+    I --> I1["What question am I actually answering?"]
+    I --> I2["What assumptions am I making?"]
+    I --> I3["What am I ignoring because it is difficult?"]
+    I --> I4["What would change my mind?"]
+
+    I1 --> J["Better Decision"]
+    I2 --> J
+    I3 --> J
+    I4 --> J
+```
+---
