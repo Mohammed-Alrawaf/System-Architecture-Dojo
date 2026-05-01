@@ -269,16 +269,8 @@ I realized:
 - Start assigning probability to architecture decisions  
 - Assign probability AND revisit accuracy later  
 - Track uncertainty explicitly  
-- Revisit and update decisions  
 - Check for “bait-and-switch” thinking in every design  
 - Use Dragonfly Eye before finalizing important decisions  
 - Replace vague wording with measurable claims  
 
 ---
-
-## Rule Going Forward
-
-- Add **1 insight per chapter max**  
-- Keep each main insight short  
-- Add Deep Dive only when the idea is worth keeping  
-- Refine existing insights instead of adding too many new sections  
