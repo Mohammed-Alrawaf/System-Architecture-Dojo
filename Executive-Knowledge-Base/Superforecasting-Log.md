@@ -7,6 +7,8 @@
 
 ## Insight Log (Evolving)
 
+---
+
 ### Illusion of Knowledge
 
 - Humans are overconfident, but the deeper issue is:
@@ -21,7 +23,7 @@
 
 ---
 
-#### Deep Dive (Thinking Layer)
+#### Deep Dive — Thinking Layer
 
 **Bait-and-Switch Thinking**
 
@@ -45,23 +47,28 @@ Does this architecture look clean and well-designed?
 
 **System 1 vs System 2**
 
-- System 1:
-  - fast, intuitive, confident  
+- **System 1**
+  - fast  
+  - intuitive  
+  - confident  
   - based on experience  
-  - can be very wrong  
+  - useful, but can be wrong  
 
-- System 2:
-  - slow, analytical  
-  - requires effort  
-  - more accurate  
+- **System 2**
+  - slower  
+  - analytical  
+  - effortful  
+  - more careful  
 
-> System 1 does not say “I don’t know” — it gives an answer anyway.
+> System 1 does not say “I don’t know.”  
+> It gives an answer anyway.
 
 ---
 
 **Role of Doubt**
 
-Doubt is not weakness — it is a thinking tool.
+Doubt is not weakness.  
+Doubt is a thinking tool.
 
 Good doubt:
 - questions assumptions  
@@ -71,6 +78,7 @@ Good doubt:
 Bad doubt:
 - overthinking  
 - no decisions  
+- paralysis  
 
 ---
 
@@ -94,24 +102,31 @@ What am I ignoring because it is difficult?
 
 - Short-term predictions → more accurate  
 - Long-term predictions → less accurate  
-- Stable systems → predictable  
-- Complex systems → uncertain  
+- Stable systems → more predictable  
+- Complex systems → more uncertain  
 
 ---
 
 ### First Mental Shift
 
-- Replace:
-  - “This will work”  
-- With:
-  - “This has ~70% chance of working”  
+Replace:
+
+```text
+This will work.
+```
+
+With:
+
+```text
+This has around 70% chance of working under these assumptions.
+```
 
 ---
 
-### Keeping Score
+## Keeping Score
 
-- Vague statements are useless — if it cannot be measured, it is not a forecast  
-- Probabilities are often misunderstood (e.g., 70% does not mean certainty)  
+- Vague statements are useless if they cannot be measured  
+- Probabilities are often misunderstood  
 - Without tracking accuracy, improvement is impossible  
 - Experts are not necessarily good forecasters  
 
@@ -123,16 +138,21 @@ What am I ignoring because it is difficult?
 
 ---
 
-#### Deep Dive (Thinking Layer)
+#### Deep Dive — Thinking Layer
 
 **Vagueness Problem**
 
 Words like:
-- “likely”
-- “possible”
-- “high chance”
 
-are interpreted differently by different people.
+```text
+likely
+possible
+high chance
+soon
+low risk
+```
+
+can mean different things to different people.
 
 > If a statement cannot be measured, it cannot be improved.
 
@@ -145,24 +165,25 @@ People assign percentages but behave as if outcomes are certain.
 Example:
 
 ```text
-“70% chance” → treated as “this will happen”
+“70% chance” → treated as “this will definitely happen”
 ```
 
 This leads to:
 - overconfidence  
 - poor decision evaluation  
+- weak learning  
 
 ---
 
-**Brier Score (Core Concept)**
+**Brier Score — Core Concept**
 
-A scoring method used to measure forecast accuracy.
+A Brier Score is a way to measure forecast accuracy.
 
-The deeper lesson:
+The practical lesson:
 
 > Without measuring prediction accuracy, there is no learning.
 
-This introduces a new discipline:
+The discipline:
 
 ```text
 Make prediction → Track outcome → Compare → Improve
@@ -199,13 +220,20 @@ Experts may have deep knowledge, but still produce poor predictions.
 > Knowledge does not automatically equal forecasting accuracy.
 
 This means I should respect expertise, but still ask:
-- Was the prediction measurable?
-- Was the confidence level clear?
-- Was the outcome tracked?
+
+```text
+Was the prediction measurable?
+
+Was the confidence level clear?
+
+Was the outcome tracked?
+
+Was the expert actually accurate before?
+```
 
 ---
 
-**Dragonfly Eye**
+## Dragonfly Eye
 
 > Seeing the same problem from multiple independent perspectives.
 
@@ -240,53 +268,62 @@ How would:
 
 ---
 
-**Lenses to Use as an Example**
+**Work / Architecture Lenses**
 
 ```text
-From the customer lens:
+Customer:
 Does this improve the user experience?
 
-From the operations lens:
+Product:
+Does this solve the real problem?
+
+Technical:
+Will it work well?
+
+Operations:
 Can this be supported at 2 AM?
 
-From the security lens:
-Where could this be abused?
+Security:
+Where could this fail or be abused?
 
-From the compliance lens:
+Compliance:
 Can this decision be explained and audited?
 
-From the product lens:
-Does this create measurable value?
+Finance:
+What does this cost to build, run, and maintain?
 
-From the finance lens:
-What does this cost to run and maintain?
-
-From the failure lens:
+Failure:
 What breaks first?
+
+Future:
+Can this evolve in 1–3 years?
 ```
 
 ---
 
-**Career Lenses**
+**Life / Career Lenses**
 
 ```text
 Current self:
 Does this opportunity excite me?
 
 Future self:
-Will this compound over 3 years?
+Will this compound over time?
 
-Family lens:
+Family:
 Does this affect stability or time?
 
-Financial lens:
+Financial:
 Does this improve or weaken my position?
 
-Learning lens:
-Will I grow from this?
+Learning:
+Will I grow?
 
-Risk lens:
+Risk:
 What could go wrong?
+
+Identity:
+Does this align with who I want to become?
 ```
 
 ---
@@ -294,16 +331,16 @@ What could go wrong?
 **Daily Practice for Dragonfly Eye**
 
 ```text
-1. Write your first answer
+1. Write my first answer
 2. Ask: “What lens am I missing?”
-3. Add 3 more perspectives
+3. Add at least 3 more perspectives
 4. Look for contradictions
-5. Update your decision
+5. Update my decision
 ```
 
 ---
 
-### Superforecasters
+## Superforecasters
 
 - Forecasting skill can be real and measurable  
 - Ordinary people can outperform experts when accuracy is tracked  
@@ -318,14 +355,12 @@ What could go wrong?
 
 ---
 
-#### Deep Dive (Thinking Layer)
+#### Deep Dive — Thinking Layer
 
 **Main Insight**
 
 > Do not ask only: “Who said it?”  
 > Ask: “How would we know if this is true?”
-
-This is one of the most important lessons for architecture work.
 
 In meetings, people often overvalue:
 - title  
@@ -361,8 +396,6 @@ A single correct prediction may be luck.
 
 Repeated accuracy over time is more meaningful.
 
-This means I should avoid overreacting to one success or one failure.
-
 Better question:
 
 ```text
@@ -393,13 +426,13 @@ Are we confusing confidence with competence?
 
 **Personal Reflection**
 
-I realized I may sometimes give too much weight to:
+I may sometimes give too much weight to:
 - senior opinions  
 - vendor recommendations  
 - confident explanations  
 - expert-sounding language  
 
-The better approach is:
+The better approach:
 
 ```text
 Respect expertise
@@ -408,14 +441,12 @@ Track outcomes
 Update beliefs
 ```
 
----
-
 > Good judgment is not proven by confidence.  
 > It is proven by repeated accuracy over time.
 
 ---
 
-### Supersmart?
+## Supersmart?
 
 - Superforecasters are not successful only because they are “smarter”  
 - Intelligence helps, but structured thinking matters more  
@@ -430,7 +461,7 @@ Update beliefs
 
 ---
 
-#### Deep Dive (Thinking Layer)
+#### Deep Dive — Thinking Layer
 
 **Main Insight**
 
@@ -497,8 +528,6 @@ structured estimation
 
 ### Fermi-izing Questions for My Architecture Work
 
-When designing a scenario, I should ask:
-
 ```text
 What is the actual decision I am trying to make?
 
@@ -523,7 +552,7 @@ What should I test first?
 
 ---
 
-### Example: KYC Modernization
+### Example — KYC Modernization
 
 Bad question:
 
@@ -553,11 +582,9 @@ How many applications arrive during peak periods?
 What cost is saved per automated application?
 ```
 
-Now the architecture decision becomes easier to reason about.
-
 ---
 
-### Example: API Integration Scenario
+### Example — API Integration Scenario
 
 Bad question:
 
@@ -587,7 +614,7 @@ What percentage adoption is realistic in 12 months?
 
 ---
 
-### Example: RPA Bridge Scenario
+### Example — RPA Bridge Scenario
 
 Bad question:
 
@@ -631,8 +658,6 @@ Both are useful, but the outside view protects me from overconfidence.
 
 ### Inside View Questions
 
-These questions focus on my specific scenario:
-
 ```text
 What do I think will happen in this project?
 
@@ -652,8 +677,6 @@ What dependencies do I not control?
 ---
 
 ### Outside View Questions
-
-These questions compare my scenario to similar situations:
 
 ```text
 How do similar projects usually go?
@@ -677,7 +700,7 @@ What would a neutral architect expect?
 
 ### My Rule
 
-Use the **outside view first**, then adjust with the inside view.
+Use the outside view first, then adjust with the inside view.
 
 ```text
 Outside View → Base Rate
@@ -704,21 +727,11 @@ Delivery may be closer to 5–7 months, not 3 months.
 
 This chapter strengthens the Dragonfly Eye idea.
 
-Fermi-izing breaks the problem into parts.  
-Outside view compares the problem to reality.  
-Dragonfly Eye looks at the problem from multiple perspectives.
-
-Together:
-
 ```text
 Fermi-izing   → break the problem down
 Outside View  → compare with similar cases
 Dragonfly Eye → inspect from multiple lenses
 ```
-
----
-
-## Architecture Thinking Application
 
 Before finalizing a design, I should ask:
 
@@ -740,9 +753,9 @@ What data would change my confidence?
 
 ---
 
-## Personal Reflection
+**Personal Reflection**
 
-I realized that I should not try to “sound smart” when solving architecture problems.
+I should not try to “sound smart” when solving architecture problems.
 
 The better goal is to:
 
@@ -754,8 +767,6 @@ use multiple perspectives
 track outcomes
 ```
 
-This chapter also reminds me not to overvalue confidence.
-
 A person can sound intelligent and still be wrong.
 
 A better question is:
@@ -764,13 +775,11 @@ A better question is:
 How would we know if this is true?
 ```
 
----
-
 > Intelligence helps, but structured thinking compounds.
 
 ---
 
-### Superquants?
+## Superquants?
 
 - People often demand yes/no answers, but reality usually requires probabilities  
 - The mind defaults to three rough settings: yes, no, maybe  
@@ -785,7 +794,7 @@ How would we know if this is true?
 
 ---
 
-#### Deep Dive (Thinking Layer)
+#### Deep Dive — Thinking Layer
 
 **Main Insight**
 
@@ -803,7 +812,7 @@ Will users adopt this?
 
 But these questions usually should not be answered with only yes or no.
 
-A better answer is:
+A better answer:
 
 ```text
 There is a 70% chance this works under these assumptions.
@@ -837,7 +846,7 @@ Example:
 
 But these are not the same.
 
-A better mental dial is:
+A better mental dial:
 
 ```text
 10% → 20% → 30% → 40% → 50% → 60% → 70% → 80% → 90%
@@ -846,8 +855,6 @@ A better mental dial is:
 ---
 
 ## Probability Range Guide
-
-This is a practical scale I can use in work and life.
 
 | Probability | Meaning | How I Should Treat It |
 |------------|---------|------------------------|
@@ -861,13 +868,11 @@ This is a practical scale I can use in work and life.
 | 80% | Very likely | Strong planning assumption |
 | 90% | Highly likely | Treat as near-certain, but still not guaranteed |
 
-> Important: Percentages should clarify judgment, not create fake precision.
+> Percentages should clarify judgment, not create fake precision.
 
 ---
 
 ## Words vs Percentages
-
-Vague words can hide different meanings.
 
 | Word | Possible Meaning |
 |------|------------------|
@@ -884,8 +889,6 @@ They reduce misunderstanding.
 ---
 
 ## Practical Forecasting Tool
-
-Use this structure when making important decisions:
 
 ```text
 Claim:
@@ -906,7 +909,7 @@ What evidence would change my confidence?
 
 ---
 
-### Example: Architecture Decision
+### Example — Architecture Decision
 
 ```text
 Claim:
@@ -932,7 +935,7 @@ API usage telemetry.
 
 ---
 
-### Example: Career Decision
+### Example — Career Decision
 
 ```text
 Claim:
@@ -1009,12 +1012,10 @@ What could have changed the outcome?
 
 ## Training Myself to Think in Probabilities
 
-I can train this skill through small daily practice.
-
 ### Daily Practice
 
 ```text
-1. Make one small forecast every day
+1. Make one small forecast
 2. Assign a probability
 3. Write the assumption
 4. Check later if it happened
@@ -1049,62 +1050,236 @@ Check tomorrow.
 5. Notice if I was overconfident or underconfident
 ```
 
----
-
-### Architecture Practice
-
-Before finalizing a design, write:
+Three forecast types to practice weekly:
 
 ```text
-Claim:
-Probability:
-Assumptions:
-Failure condition:
-Update trigger:
-```
+Work forecast:
+Something related to meetings, requirements, delivery, stakeholders, or risk.
 
-This turns architecture from:
+Learning forecast:
+Something related to reading, GitHub, studying, or skill development.
 
-```text
-I think this is good.
-```
-
-into:
-
-```text
-I can explain what I believe, how confident I am, and what would change my mind.
+Life / career forecast:
+Something related to opportunities, energy, consistency, or personal progress.
 ```
 
 ---
 
-## Personal Reflection
+## Supernewsjunkies?
 
-I realized I often use vague confidence words because they feel safer.
+- Good forecasters update their beliefs when new evidence appears  
+- Small updates can improve accuracy over time  
+- The challenge is knowing when to update and by how much  
+- Bad judgment often comes from overreacting to noise or underreacting to signal  
 
-But vague words make it harder to learn.
-
-If I say:
-
-```text
-This will likely work.
-```
-
-I can avoid being wrong.
-
-But if I say:
-
-```text
-I am 70% confident this will work.
-```
-
-Then I can learn later whether my confidence was calibrated.
-
-This is uncomfortable, but it is how improvement happens.
+**Architecture Application:**
+- Do not defend the first architecture decision blindly  
+- Update confidence when new evidence appears  
+- Separate signal from noise before changing direction  
+- Watch for ego or identity blocking useful updates  
 
 ---
 
-> Probability is not about pretending to know the future.  
-> It is about making uncertainty clear enough to improve judgment.
+#### Deep Dive — Thinking Layer
+
+**Main Insight**
+
+> Good judgment is not making one forecast and defending it.  
+> Good judgment is updating beliefs carefully as new evidence appears.
+
+A forecast should not be treated as a fixed position.
+
+It should evolve:
+
+```text
+Initial belief → New evidence → Updated belief → Better action
+```
+
+---
+
+## Bayesian Updating
+
+Bayesian thinking means starting with a prior belief and updating it when new evidence appears.
+
+Simple version:
+
+```text
+Prior:
+What did I believe before?
+
+Evidence:
+What new information appeared?
+
+Update:
+Should my confidence go up, down, or stay the same?
+
+Magnitude:
+Small update or big update?
+
+Action:
+What should I do differently?
+```
+
+---
+
+### Example — Architecture Decision
+
+```text
+Prior:
+I am 70% confident the webhook model will be adopted by partners within 6 months.
+
+Evidence:
+Two Tier-1 partners say they lack webhook capability.
+
+Update:
+Reduce confidence from 70% to 55%.
+
+Action:
+Strengthen REST fallback and improve partner onboarding support.
+```
+
+---
+
+### Example — Vendor / Delivery Decision
+
+```text
+Prior:
+I am 75% confident the vendor can deliver in 3 months.
+
+Evidence:
+The vendor missed two clarification deadlines.
+
+Update:
+Reduce confidence from 75% to 60%.
+
+Action:
+Ask for a revised delivery plan and add timeline buffer.
+```
+
+---
+
+## Overreacting vs Underreacting
+
+### Overreacting
+
+Overreacting happens when I treat noise as signal.
+
+Example:
+
+```text
+One API timeout happens during testing
+→ I assume the whole architecture cannot scale
+```
+
+Better question:
+
+```text
+Is this a one-time issue or a repeated pattern?
+```
+
+---
+
+### Underreacting
+
+Underreacting happens when I ignore useful evidence because it threatens my belief, identity, or preferred solution.
+
+Example:
+
+```text
+Three teams say the design is hard to operate
+→ I dismiss the feedback because I like the architecture
+```
+
+Better question:
+
+```text
+Am I dismissing this because the evidence is weak,
+or because I do not like what it implies?
+```
+
+---
+
+## Signal vs Noise
+
+Before updating my belief, I should ask:
+
+```text
+Is this evidence meaningful?
+
+Is this repeated or isolated?
+
+Does this come from a reliable source?
+
+Does it challenge a key assumption?
+
+Would I care about this evidence if it supported my view?
+
+Would I dismiss it if it disagreed with me?
+```
+
+---
+
+## Architecture Thinking Application
+
+When new information appears, I should ask:
+
+```text
+What was my original belief?
+
+What new evidence appeared?
+
+Is this signal or noise?
+
+Does this evidence challenge a key assumption?
+
+Should my confidence go up, down, or stay the same?
+
+By how much?
+
+What action should change because of this update?
+```
+
+---
+
+## Update Scale
+
+| Evidence Type | Confidence Update |
+|--------------|-------------------|
+| Weak evidence | 5% change |
+| Moderate evidence | 10–15% change |
+| Strong evidence | 20%+ change |
+| Repeated evidence | Treat seriously |
+| Evidence that breaks a core assumption | Revisit the decision |
+
+Example:
+
+```text
+One partner complaint → small update
+Three partners with the same complaint → serious update
+Production outage from the same issue → major update
+```
+
+---
+
+**Personal Reflection**
+
+Updating is not only logical.
+
+It is emotional.
+
+Sometimes I may underreact because the evidence threatens:
+- my design  
+- my plan  
+- my confidence  
+- my identity  
+- my reputation  
+
+The hard part is not knowing that I should update.
+
+The hard part is being willing to update when the truth is uncomfortable.
+
+> Do not overreact to noise.  
+> Do not underreact to signal.
 
 ---
 
@@ -1151,7 +1326,7 @@ flowchart TD
 
 ---
 
-## Thinking Toolkit — To Be Used in Future Scenarios & Life Decisions
+# To Be Used in Future Scenarios, Work, and Life Decisions
 
 This section captures the reusable thinking tools I want to actively apply in architecture scenarios, work decisions, and personal decisions.
 
@@ -1161,15 +1336,15 @@ The goal is to think better and make better decisions under uncertainty.
 
 ---
 
-### 1. Fermi-izing
+## 1. Fermi-izing
 
 Break large questions into smaller estimable parts.
 
 **Use When:**
-- the problem feels too big
-- the answer feels vague
-- I am tempted to guess
-- I need to estimate feasibility, cost, risk, or adoption
+- the problem feels too big  
+- the answer feels vague  
+- I am tempted to guess  
+- I need to estimate feasibility, cost, risk, or adoption  
 
 **Questions to Ask:**
 
@@ -1207,16 +1382,16 @@ What is the acceptable failure rate?
 
 ---
 
-### 2. Outside View Before Inside View
+## 2. Outside View Before Inside View
 
 Use the outside view first to avoid overconfidence, then adjust using local context.
 
 **Use When:**
-- estimating timelines
-- judging delivery risk
-- reviewing vendors
-- assessing career opportunities
-- evaluating new architectures
+- estimating timelines  
+- judging delivery risk  
+- reviewing vendors  
+- assessing career opportunities  
+- evaluating new architectures  
 
 **Questions to Ask:**
 
@@ -1258,16 +1433,16 @@ Final View   → Updated Forecast
 
 ---
 
-### 3. Dragonfly Eye
+## 3. Dragonfly Eye
 
 Look at the same problem from multiple independent perspectives.
 
 **Use When:**
-- finalizing an architecture
-- making a career decision
-- reviewing a strategy
-- preparing for stakeholder discussion
-- checking if I am trapped in one viewpoint
+- finalizing an architecture  
+- making a career decision  
+- reviewing a strategy  
+- preparing for stakeholder discussion  
+- checking if I am trapped in one viewpoint  
 
 **Architecture Lenses:**
 
@@ -1327,15 +1502,15 @@ Does this align with who I want to become?
 
 ---
 
-### 4. Probability Ranges
+## 4. Probability Ranges
 
 Avoid forcing uncertainty into yes/no answers.
 
 **Use When:**
-- confidence is unclear
-- stakeholders demand certainty
-- I am making assumptions
-- a decision depends on uncertain outcomes
+- confidence is unclear  
+- stakeholders demand certainty  
+- I am making assumptions  
+- a decision depends on uncertain outcomes  
 
 **Probability Guide:**
 
@@ -1369,7 +1544,7 @@ What would prove me wrong?
 
 ---
 
-### 5. Practical Forecasting Template
+## 5. Practical Forecasting Template
 
 Use this when making important decisions.
 
@@ -1398,7 +1573,98 @@ Was I overconfident, underconfident, or calibrated?
 
 ---
 
-### 6. Epistemic vs Aleatory Uncertainty
+## 6. Bayesian Updating
+
+Update beliefs when new evidence appears.
+
+**Use When:**
+- new information challenges my decision  
+- a stakeholder gives feedback  
+- testing results differ from expectations  
+- a vendor misses a commitment  
+- a project assumption starts to weaken  
+- I feel defensive about my original view  
+
+**Core Pattern:**
+
+```text
+Prior:
+What did I believe before?
+
+Evidence:
+What changed?
+
+Update:
+Should confidence go up, down, or stay the same?
+
+Magnitude:
+How much should I update?
+
+Action:
+What should I do differently?
+```
+
+**Questions to Ask:**
+
+```text
+Is this signal or noise?
+
+Is this evidence repeated or isolated?
+
+Does it challenge a core assumption?
+
+Am I overreacting because the evidence is recent?
+
+Am I underreacting because the evidence threatens my view?
+
+What would I believe if someone else designed this?
+
+What action should change now?
+```
+
+**Architecture Example:**
+
+```text
+Prior:
+I am 80% confident this design can be supported operationally.
+
+Evidence:
+Operations team says the alerting model is unclear and support-heavy.
+
+Update:
+Reduce confidence to 65%.
+
+Action:
+Add runbooks, simplify alerts, and review support flow with AppOps.
+```
+
+**Life / Career Example:**
+
+```text
+Prior:
+I am 70% confident this opportunity supports my architecture career path.
+
+Evidence:
+Interview reveals the role is mostly operational support.
+
+Update:
+Reduce confidence to 45%.
+
+Action:
+Ask direct questions about design ownership before accepting.
+```
+
+**Reminder:**
+
+```text
+Small evidence → small update
+Repeated evidence → serious update
+Core assumption broken → revisit the decision
+```
+
+---
+
+## 7. Epistemic vs Aleatory Uncertainty
 
 Not all uncertainty is the same.
 
@@ -1407,7 +1673,7 @@ Some uncertainty must be managed.
 
 ---
 
-#### Epistemic Uncertainty
+### Epistemic Uncertainty
 
 **Meaning:**
 
@@ -1416,12 +1682,12 @@ I do not know enough yet.
 ```
 
 This uncertainty can be reduced through:
-- research
-- testing
-- pilots
-- prototypes
-- expert input
-- data collection
+- research  
+- testing  
+- pilots  
+- prototypes  
+- expert input  
+- data collection  
 
 **Questions to Ask:**
 
@@ -1467,7 +1733,7 @@ Ask interview questions, review responsibilities, speak to people in the company
 
 ---
 
-#### Aleatory Uncertainty
+### Aleatory Uncertainty
 
 **Meaning:**
 
@@ -1478,12 +1744,12 @@ Reality is variable or random.
 This uncertainty cannot be fully eliminated.
 
 It must be managed through:
-- buffers
-- fallback paths
-- monitoring
-- resilience
-- redundancy
-- diversification
+- buffers  
+- fallback paths  
+- monitoring  
+- resilience  
+- redundancy  
+- diversification  
 
 **Questions to Ask:**
 
@@ -1529,15 +1795,15 @@ Maintain savings, build skills, keep network active, continue portfolio work.
 
 ---
 
-### 7. How vs Why
+## 8. How vs Why
 
 Use “how” to understand mechanism.
 
 **Use When:**
-- analyzing failure
-- testing success assumptions
-- reviewing an architecture
-- avoiding shallow explanations
+- analyzing failure  
+- testing success assumptions  
+- reviewing an architecture  
+- avoiding shallow explanations  
 
 **Questions to Ask:**
 
@@ -1559,15 +1825,15 @@ What signal would warn me early?
 
 ---
 
-### 8. Validation over Authority
+## 9. Validation over Authority
 
 Respect expertise, but validate claims.
 
 **Use When:**
-- a senior person gives a recommendation
-- a vendor presents a solution
-- a confident person dominates the discussion
-- I feel pressure to agree
+- a senior person gives a recommendation  
+- a vendor presents a solution  
+- a confident person dominates the discussion  
+- I feel pressure to agree  
 
 **Questions to Ask:**
 
@@ -1587,7 +1853,7 @@ Has this person, team, or method been accurate before?
 
 ---
 
-### 9. Daily / Weekly Practice
+## 10. Daily / Weekly Practice
 
 To improve forecasting skill, I need practice.
 
@@ -1637,6 +1903,7 @@ Break problems down.
 Use outside view.
 Think in probabilities.
 Separate reducible uncertainty from randomness.
+Update beliefs when evidence changes.
 Question authority without dismissing expertise.
 Look through multiple lenses.
 Track outcomes.
