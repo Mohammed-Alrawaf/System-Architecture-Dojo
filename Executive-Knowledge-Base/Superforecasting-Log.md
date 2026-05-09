@@ -1108,28 +1108,6 @@ This is uncomfortable, but it is how improvement happens.
 
 ---
 
-## Running Application Notes
-
-- Start assigning probability to architecture decisions  
-- Assign probability AND revisit accuracy later  
-- Track uncertainty explicitly  
-- Check for “bait-and-switch” thinking in every design  
-- Use Dragonfly Eye before finalizing important decisions  
-- Replace vague wording with measurable claims  
-- Respect expertise, but validate claims  
-- Ask: “How would we know if this is true?”  
-- Avoid confusing confidence with competence  
-- Use Fermi-izing to break large architecture questions into smaller estimable parts  
-- Use outside view before trusting my inside view  
-- Ask: “What is the base rate for this type of project?”  
-- Avoid confusing intelligence with good judgment  
-- Avoid yes/no answers when probability is more honest  
-- Use probability ranges to clarify uncertainty  
-- Ask “how would this work/fail?” instead of only “why?”  
-- Use the practical forecasting tool for major decisions  
-
----
-
 ## Dragonfly Eye Map
 
 ```mermaid
@@ -1173,10 +1151,496 @@ flowchart TD
 
 ---
 
-## To Be Used in Future Scenarios
+## Thinking Toolkit — To Be Used in Future Scenarios & Life Decisions
 
-- Use Fermi-izing to break large architecture questions into smaller estimable parts  
-- Use outside view before trusting my inside view  
-- Ask: “What is the base rate for this type of project?”  
-- Ask: “How would we know if this is true?”  
-- Avoid confusing intelligence with good judgment  
+This section captures the reusable thinking tools I want to actively apply in architecture scenarios, work decisions, and personal decisions.
+
+The goal is not only to read better.
+
+The goal is to think better and make better decisions under uncertainty.
+
+---
+
+### 1. Fermi-izing
+
+Break large questions into smaller estimable parts.
+
+**Use When:**
+- the problem feels too big
+- the answer feels vague
+- I am tempted to guess
+- I need to estimate feasibility, cost, risk, or adoption
+
+**Questions to Ask:**
+
+```text
+What is the big question?
+
+Can I break it into smaller parts?
+
+What variables drive the outcome?
+
+Which variables do I know?
+
+Which variables am I guessing?
+
+Which assumption matters most?
+
+What data would reduce uncertainty?
+
+What should I test first?
+```
+
+**Example:**
+
+```text
+Bad question:
+Will this project succeed?
+
+Better questions:
+What does success mean?
+What is the current baseline?
+What must happen for success?
+What dependency is most likely to fail?
+What is the acceptable failure rate?
+```
+
+---
+
+### 2. Outside View Before Inside View
+
+Use the outside view first to avoid overconfidence, then adjust using local context.
+
+**Use When:**
+- estimating timelines
+- judging delivery risk
+- reviewing vendors
+- assessing career opportunities
+- evaluating new architectures
+
+**Questions to Ask:**
+
+```text
+How do similar projects usually go?
+
+What is the base rate?
+
+What usually gets underestimated?
+
+What usually causes delay?
+
+What do similar failures teach us?
+
+What would a neutral architect expect?
+```
+
+**Then Ask the Inside View:**
+
+```text
+What makes this case different?
+
+What constraints are unique here?
+
+What do I know about this team, system, or environment?
+
+What dependencies do I control?
+
+What dependencies do I not control?
+```
+
+**Rule:**
+
+```text
+Outside View → Base Rate
+Inside View  → Local Adjustment
+Final View   → Updated Forecast
+```
+
+---
+
+### 3. Dragonfly Eye
+
+Look at the same problem from multiple independent perspectives.
+
+**Use When:**
+- finalizing an architecture
+- making a career decision
+- reviewing a strategy
+- preparing for stakeholder discussion
+- checking if I am trapped in one viewpoint
+
+**Architecture Lenses:**
+
+```text
+Customer:
+Does this improve the user experience?
+
+Product:
+Does this solve the real problem?
+
+Technical:
+Will it work well?
+
+Operations:
+Can it be supported at 2 AM?
+
+Security:
+Where can it fail or be abused?
+
+Compliance:
+Can it be explained and audited?
+
+Finance:
+What does it cost to build and run?
+
+Failure:
+What breaks first?
+
+Future:
+Can it evolve in 1–3 years?
+```
+
+**Life / Career Lenses:**
+
+```text
+Current self:
+Does this opportunity excite me?
+
+Future self:
+Will this compound over time?
+
+Family:
+Does this affect stability or time?
+
+Financial:
+Does this improve or weaken my position?
+
+Learning:
+Will I grow?
+
+Risk:
+What could go wrong?
+
+Identity:
+Does this align with who I want to become?
+```
+
+---
+
+### 4. Probability Ranges
+
+Avoid forcing uncertainty into yes/no answers.
+
+**Use When:**
+- confidence is unclear
+- stakeholders demand certainty
+- I am making assumptions
+- a decision depends on uncertain outcomes
+
+**Probability Guide:**
+
+```text
+10% = Very unlikely
+20% = Unlikely
+30% = Possible but weak
+40% = Plausible
+50% = Uncertain / toss-up
+60% = Slightly likely
+70% = Likely
+80% = Very likely
+90% = Highly likely
+```
+
+**Questions to Ask:**
+
+```text
+What is my confidence?
+
+Why this percentage and not higher?
+
+Why this percentage and not lower?
+
+What would increase my confidence?
+
+What would decrease my confidence?
+
+What would prove me wrong?
+```
+
+---
+
+### 5. Practical Forecasting Template
+
+Use this when making important decisions.
+
+```text
+Claim:
+What do I think will happen?
+
+Probability:
+How confident am I?
+
+Assumptions:
+What must be true?
+
+Failure condition:
+What would prove me wrong?
+
+Update trigger:
+What evidence would change my confidence?
+
+Outcome:
+What happened?
+
+Lesson:
+Was I overconfident, underconfident, or calibrated?
+```
+
+---
+
+### 6. Epistemic vs Aleatory Uncertainty
+
+Not all uncertainty is the same.
+
+Some uncertainty can be reduced.  
+Some uncertainty must be managed.
+
+---
+
+#### Epistemic Uncertainty
+
+**Meaning:**
+
+```text
+I do not know enough yet.
+```
+
+This uncertainty can be reduced through:
+- research
+- testing
+- pilots
+- prototypes
+- expert input
+- data collection
+
+**Questions to Ask:**
+
+```text
+What do I not know yet?
+
+What data would reduce this uncertainty?
+
+Who can I ask?
+
+What test can I run?
+
+What assumption can I validate?
+
+Is this risk real, or am I missing information?
+```
+
+**Scenario Example:**
+
+```text
+Uncertainty:
+Will partners support webhooks?
+
+Type:
+Epistemic
+
+Response:
+Run a pilot, interview partners, review technical readiness.
+```
+
+**Life Example:**
+
+```text
+Uncertainty:
+Will this job give me architecture exposure?
+
+Type:
+Epistemic
+
+Response:
+Ask interview questions, review responsibilities, speak to people in the company.
+```
+
+---
+
+#### Aleatory Uncertainty
+
+**Meaning:**
+
+```text
+Reality is variable or random.
+```
+
+This uncertainty cannot be fully eliminated.
+
+It must be managed through:
+- buffers
+- fallback paths
+- monitoring
+- resilience
+- redundancy
+- diversification
+
+**Questions to Ask:**
+
+```text
+What variation should I expect even if I understand the system?
+
+What buffer do I need?
+
+What fallback should exist?
+
+What is the worst reasonable case?
+
+What should I monitor?
+
+How do I recover when this happens?
+```
+
+**Scenario Example:**
+
+```text
+Uncertainty:
+Will traffic spike unexpectedly during peak season?
+
+Type:
+Aleatory
+
+Response:
+Use queues, rate limits, autoscaling, and fallback paths.
+```
+
+**Life Example:**
+
+```text
+Uncertainty:
+Will the company restructure next year?
+
+Type:
+Aleatory
+
+Response:
+Maintain savings, build skills, keep network active, continue portfolio work.
+```
+
+---
+
+### 7. How vs Why
+
+Use “how” to understand mechanism.
+
+**Use When:**
+- analyzing failure
+- testing success assumptions
+- reviewing an architecture
+- avoiding shallow explanations
+
+**Questions to Ask:**
+
+```text
+How exactly will this succeed?
+
+What steps must happen?
+
+Which dependency must hold?
+
+Where could the chain break?
+
+How could this fail?
+
+Which assumption breaks first?
+
+What signal would warn me early?
+```
+
+---
+
+### 8. Validation over Authority
+
+Respect expertise, but validate claims.
+
+**Use When:**
+- a senior person gives a recommendation
+- a vendor presents a solution
+- a confident person dominates the discussion
+- I feel pressure to agree
+
+**Questions to Ask:**
+
+```text
+How would we know if this is true?
+
+What evidence supports this?
+
+What assumption is hidden here?
+
+What result would prove this wrong?
+
+Are we confusing confidence with competence?
+
+Has this person, team, or method been accurate before?
+```
+
+---
+
+### 9. Daily / Weekly Practice
+
+To improve forecasting skill, I need practice.
+
+**Daily Practice:**
+
+```text
+1. Make one small forecast
+2. Assign a probability
+3. Write the assumption
+4. Check the outcome
+5. Adjust my thinking
+```
+
+**Weekly Practice:**
+
+```text
+1. Review 3 forecasts
+2. Check what happened
+3. Ask what I missed
+4. Identify overconfidence or underconfidence
+5. Adjust my probability scale
+```
+
+**Three Forecast Types to Practice Weekly:**
+
+```text
+Work forecast:
+Something related to meetings, requirements, delivery, stakeholders, or risk.
+
+Learning forecast:
+Something related to reading, GitHub, studying, or skill development.
+
+Life / career forecast:
+Something related to opportunities, energy, consistency, or personal progress.
+```
+
+---
+
+## Final Reminder
+
+The point of this log is not to collect ideas.
+
+The point is to use them.
+
+```text
+Break problems down.
+Use outside view.
+Think in probabilities.
+Separate reducible uncertainty from randomness.
+Question authority without dismissing expertise.
+Look through multiple lenses.
+Track outcomes.
+Update beliefs.
+```
+
+> Better judgment is built through repeated practice, not one-time insight.
